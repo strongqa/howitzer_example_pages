@@ -1,8 +1,8 @@
 require_relative 'main_menu'
 
 class EditAccountPage < WebPage
-  URL = '/users/edit'
-  validates :title, pattern: /Demo web application - Edit User\z/
+  url '/users/edit'
+  validate :title, pattern: /Demo web application - Edit User\z/
 
   add_button_locator :cancel_account_button, 'Cancel my account'
   add_button_locator :update_account_btn, 'Update'

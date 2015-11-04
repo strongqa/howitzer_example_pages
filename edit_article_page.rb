@@ -1,7 +1,7 @@
 require_relative 'main_menu'
 
 class EditArticlePage < WebPage
-  validates :title, pattern: /\ADemo web application - Edit Article\z/
+  validate :title, pattern: /\ADemo web application - Edit Article\z/
 
   add_field_locator :article_title_field, 'article[title]'
   add_field_locator :article_text_field, 'article[text]'

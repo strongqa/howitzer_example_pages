@@ -1,9 +1,9 @@
 require_relative 'main_menu'
 
 class ArticlePage < WebPage
-  URL = ->(id) {"/articles/#{id}"}
-  validates :title, pattern: /\ADemo web application - Article\z/
-  validates :url, pattern: /\/articles\/\d+\/?\z/
+  url '/articles{/id}'
+  validate :title, pattern: /\ADemo web application - Article\z/
+  validate :url, pattern: /\/articles\/\d+\/?\z/
 
   add_field_locator :comment_field, 'comment_body'
   add_button_locator :add_comment_button, 'Create comment'

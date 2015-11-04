@@ -1,8 +1,8 @@
 require_relative 'main_menu'
 
 class ArticleListPage < WebPage
-  URL = '/articles/'
-  validates :title, pattern: /\ADemo web application - Listing Articles\z/
+  url '/articles/'
+  validate :title, pattern: /\ADemo web application - Listing Articles\z/
 
   include MainMenu
 

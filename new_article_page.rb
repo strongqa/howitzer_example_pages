@@ -1,6 +1,6 @@
 class NewArticlePage < WebPage
-  URL = '/articles/new/'
-  validates :title, pattern: /\ADemo web application - New Article\z/
+  url '/articles/new/'
+  validate :title, pattern: /\ADemo web application - New Article\z/
 
   add_field_locator :article_title_field, 'article[title]'
   add_field_locator :article_text_field, 'article[text]'

@@ -1,9 +1,9 @@
 require_relative 'main_menu'
 
 class HomePage < WebPage
-  URL = '/'
-  validates :title, pattern: /\ADemo web application - Home\z/
-  validates :url, pattern: /\A(?:.*?:\/\/)?[^\/]*\/?\z/
+  url '/'
+  validate :title, pattern: /\ADemo web application - Home\z/
+  validate :url, pattern: /\A(?:.*?:\/\/)?[^\/]*\/?\z/
 
   add_locator :article_link, lambda{|title| {xpath: ".//a[.='#{title}']"}}
   add_locator :panel_heading, lambda{|title| {xpath: "//h3[text()=\"#{title}\"]/parent::*/following-sibling::*"}}

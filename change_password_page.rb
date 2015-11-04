@@ -1,8 +1,8 @@
 require_relative 'main_menu'
 
 class ChangePasswordPage < WebPage
-  URL = '/users/password/new'
-  validates :url, pattern: /\/users\/password/
+  url '/users/password/new'
+  validate :url, pattern: /\/users\/password/
 
   add_field_locator :password_input, 'user_password'
   add_field_locator :confirm_password_input, 'user_password_confirmation'

@@ -1,8 +1,8 @@
 require_relative 'main_menu'
 
 class UsersPage < WebPage
-  URL = '/users'
-  validates :title, pattern: /\ADemo web application - Users\z/
+  url '/users'
+  validate :title, pattern: /\ADemo web application - Users\z/
 
   add_locator       :registered_user_date,        lambda{|email| {xpath: ".//li[contains(.,'#{email}')]"}}
 
