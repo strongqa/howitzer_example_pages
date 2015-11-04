@@ -17,11 +17,6 @@ class ArticlePage < WebPage
   
   include MainMenu
 
-  def self.open(id)
-    super("#{app_url}#{URL.(id)}")
-  end
-
-
   def fill_comment_form(body: nil)
     log.info "Fill in Add Comment form with body: #{body}"
     fill_in(field_locator(:comment_field), with: body) unless body.nil?
@@ -56,8 +51,8 @@ class ArticlePage < WebPage
         destroy.call
       end
     end
-
   end
+
   def comment_form_present?
     find(locator(:comment_form))
     true
@@ -71,7 +66,6 @@ class ArticlePage < WebPage
   rescue Capybara::ElementNotFound
     false
   end
-
 
   def edit_button_present?
     find(locator :edit_article_button)

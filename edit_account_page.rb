@@ -12,7 +12,6 @@ class EditAccountPage < WebPage
   add_field_locator :password_confirmation, 'user_password_confirmation'
   add_field_locator :current_password, 'user_current_password'
 
-
   include MainMenu
 
   def cancel_my_account
